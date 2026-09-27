@@ -43,7 +43,7 @@ jpcafe/
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/<your-username>/jpcafe.git
+   git clone https://github.com/oliv3a/jpcafe.git
    cd jpcafe
    ```
 
