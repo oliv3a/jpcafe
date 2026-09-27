@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/styles.css" />
+    <title>Order Page</title>
+    <p id="welcome">Welcome to</p>
+    <p id="konnichiwa">Konnichiwa</p>
+    <img src="../static/JPCafeLogo2.PNG" width="200" id="jpcafelogo" />
+    <a href="{{ url_for('register') }}" id="signup">Sign Up</a>
+  </head>
+
+  <body>
+    <form action="{{ url_for('ordered') }}" method="POST">
+      <table id="foodtable">
+        <tr>
+          <!---food images -->
+          {% for item in data %}
+          <td><img src="../static/{{ item[5] }}" width="200" height="140" /></td>
+
+          {% endfor %}
+        </tr>
+        <tr>
+          <!---food name -->
+          {% for item in data %}
+          <td><b>{{ item[1] }}</b></td>
+
+          {% endfor %}
+        </tr>
+        <tr>
+          <!---food desc -->
+          {% for item in data %}
+          <td>{{ item[2] }}</td>
+
+          {% endfor %}
+        </tr>
+        <tr>
+          <!---food price -->
+          {% for item in data %}
+          <td>${{item[3]}}</td>
+
+          {% endfor %}
+        </tr>
+        <tr>
+          <!---food qty -->
+          {% for item in data %}
+          <td>{{ item[4] }} avail</td>
+
+          {% endfor %}
+        </tr>
+        <tr>
+          <!---food qty input box -->
+          {% for item in data %}
+          <td><input type="text" name="quantity" id="orderinputbox" />order</td>
+
+          {% endfor %}
+        </tr>
+      </table>
+    
+      <p>
+        Customer name: <input type="text" name="customer_name" />
+        <input
+          type="submit"
+          value="Order as guest"
+          id="orderasguest"
+          name="button_press"
+        />
+      </p>
+    
+      <p>
+        Member email: <input type="text" name="member_email" /> 
+        Password:
+        <input type="password" name="memberpassword"/>
+        <input
+          type="submit"
+          value="Member login and Order" 
+          name="button_press"
+        />
+      </p>
+    </form>
+    <br />
+    <p style="color:red;">{{ potential_err_msg }}</p>
+  </body>
+</html>

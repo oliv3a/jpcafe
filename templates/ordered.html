@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <img src="../static/JPCafeLogo2.PNG" width="200" id="jpcafelogo" />
+    <h1><b>Order Confirmation</b></h1>
+    <br>
+    <p>{{ name }}, you have ordered:</p>
+    <br /> 
+    <ul>
+        {% for row in displayArr %}
+            <li>{{row[0]}}, ${{row[1]}}, Qty:{{row[2]}}</li>
+        {% endfor %}
+    </ul>
+    <br /> 
+    Total ${{ total }}
+    Discount: {{ disc }}%
+    <br /><br />
+    Total Payable ${{ total_payable }}
+    <br /><br />
+    Your order is confirmed.<br /> 
+    Please pay the aboev amount when collecting your food.
+    <br /><br /> 
+    Date: {{ date }}
+</html>

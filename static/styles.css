@@ -1,0 +1,33 @@
+#welcome {
+    text-align: center;
+}
+
+#jpcafelogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#konnichiwa {
+    position: absolute;
+}
+
+#signup{
+    position: absolute;
+    right: 10px;
+    top: 70px;
+}
+
+#foodtable{
+    overflow-x: scroll;
+    border-bottom: 5px solid lightseagreen;
+}
+
+#foodtable tr {
+    text-align: center;
+}
+
+#orderinputbox {
+    width: 40px;
+}
+
